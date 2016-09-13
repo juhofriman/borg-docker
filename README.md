@@ -2,6 +2,8 @@
 
 Just simple tryout for dockerizing borg https://github.com/crufter/borg
 
+Docker image on Docker Hub:  https://hub.docker.com/r/juhofriman/borg/
+
 ## Example
 
 ```
@@ -24,7 +26,7 @@ bash-3.2$ docker run juhofriman/borg "copy files"
         [43] find . \( -name "*.xyz" -o -name "*.abc" \) -exec cp {} /path/i/want/to/copy/to \;
         [44] find ./ -name "*.{xyz,abc}" -exec cp {} /path/i/want/to/copy/to
 
-(5) recurisve copy to relative destination paths
+(5) recursive copy to relative destination paths
         [51] cp --parents `find /path/src  \( -name "*.jpg" -o -name "*.gif" \)` /path/target
         [52] $ rsync -av /path/src/ /path/dest/ --include \*/ --include \*.jpg --include \*.gif --exclude \*
              -

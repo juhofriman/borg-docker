@@ -2,6 +2,8 @@
 
 Just simple tryout for dockerizing borg https://github.com/crufter/borg
 
+Image has been deployed to dockerhub https://hub.docker.com/r/juhofriman/borg/ so you can pretty much use it like this `docker run juhofriman/borg "link files"`. Cool kids even create alias `alias borg='docker run juhofriman/borg'` in order to make things work straight out with `borg "use diff"`.
+
 ## Example
 
 ```
@@ -35,4 +37,17 @@ bash-3.2$ docker run juhofriman/borg "copy files"
              --include \*.jpg # include files ending .jpg
              --include \*.gif # include files ending .gif
              --exclude \*     # exclude all other files
+             
+```
+
+With alias `alias borg='docker run juhofriman/borg'` 
+```
+bash-3.2$ borg "netcat"
+(1) Serve an HTTP response including an image, with netcat
+        [11] http_content_length=`stat -c '%s' $resource`
+             -
+             ...
+             echo -e "Content-Type: $http_content_type\n"
+             cat $resource
+
 ```
